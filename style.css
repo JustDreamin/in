@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Zwarte achtergrond */
+    color: #ffffff; /* Witte text */
+}
+
+header {
+    background-color: #1c1c1c; /* Donkergrijze header */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.-5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+/* Hamburger Menu Knop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #333333;
+}
+
+.content {
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+}
+
+.box {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 30%;
+    text-align: center;
+}
+
+.box img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.box h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.box p {
+    font-size: 16px;
+}
+
+/* Code zorgt dat de website op telefoon werkt en aanpast op een kleiner scherm */
+@media only screen and (max-width: 768px) {
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #1a1a1a;
+        transition: left 0.3s ease-in-out;
+        z-index: 10;
+    }
+
+    nav.active {
+        left: 0;
+    }
+
+    nav a {
+        margin: 15px 0;
+        font-size: 24px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .content {
+        margin-top: 60px;
+    }
+}

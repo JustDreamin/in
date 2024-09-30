@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatica Yonah</title>
+    <link rel="stylesheet" href="style.css"> <!-- Opent de CSS -->
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('active'); // Menu openen
+        }
+
+        function showSection(section) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById(section).classList.remove('hidden');
+            var nav = document.querySelector('nav');
+            nav.classList.remove('active'); // Menu sluit na klikken
+        }
+
+        window.onload = function() {
+            showSection('start');
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Portfolio website</h1>
+        <!-- Hamburger Menu  -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="javascript:void(0);" onclick="showSection('start')">Wie ben ik</a>
+        <a href="javascript:void(0);" onclick="showSection('kan')">Wat kan ik</a>
+        <a href="javascript:void(0);" onclick="showSection('wil')">Wat wil ik</a>
+    </nav>
+
+    <div class="content">
+        <!-- Start Sectie -->
+        <div id="start" class="section">
+            <h2>filler text twee</h2>
+            <p>filler text een</p>
+        </div>
+
+        <!-- Kan Sectie -->
+        <div id="kan" class="section hidden">
+            <h2>filler text 4</h2>
+            <p>filler text 3</p>
+        </div> 
+    
+        <!-- Wil Sectie -->
+        <div id="wil" class="section hidden">
+            <h2>filler text 5</h2>
+            <p>filler text 6</p>
+        </div>
+    </div>
+</body>
+</html>
